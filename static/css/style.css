@@ -28,10 +28,10 @@ main {
     background-color: whitesmoke;
 }
 
+
 /* Header */
 
 .navbar {
-    background-color: lightgray;
     box-shadow: 1px -1px 5px 0 #000;
 }
 
@@ -50,4 +50,37 @@ img.logo {
     border-radius: 50%;
 }
 
-/* Footer */
+/* Footer Section */
+
+footer {
+    flex-shrink: 0;
+}
+
+.footer-bg {
+    background-color: lightgray;
+    box-shadow: 1px -1px 5px 0 #000;
+}
+
+#social-media {
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 30px;
+}
+
+#social-media i {
+    font-size: 160%;
+    padding: 5%;
+    color: #ffffff;
+    transition-duration: 0.5s;
+}
+
+#social-media i:hover {
+    color: #fee607;
+}
+
+.copyright {
+    font-size: 80%;
+}
