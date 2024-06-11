@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from lego.views import lego_blog
+from home.views import lego_blog
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('lego/', lego_blog, name='lego')
+    path('home/', lego_blog, name='home')
 ]
