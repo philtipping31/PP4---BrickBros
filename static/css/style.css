@@ -44,6 +44,10 @@ a.nav-link {
     text-decoration: underline;
 }
 
+.nav-item:hover {
+    text-decoration: underline;
+}
+
 img.logo {
     width: 100px;
     height: 100px;

@@ -42,7 +42,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
         <!-- Logo -->
-          <a class="navbar-brand" href="#"><img src="{% static 'images/logo.webp' %}" alt="BrickBros Logo" class="logo"></a>
+          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt="BrickBros Logo" class="logo"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -50,7 +50,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Builds</a>
@@ -69,6 +69,11 @@
               </li>
               {% endif %}
             </ul>
+            {% if user.is_authenticated %}
+            <p class="text-end m-3 col align-self-end">You are logged in as {{ user }}</p>
+            {% else %}
+            <p class="text-end m-3 col align-self-end">You are not logged in</p>
+            {% endif %}
           </div>
         </div>
       </nav>
