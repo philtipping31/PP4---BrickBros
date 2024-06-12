@@ -42,6 +42,7 @@ a.nav-link {
 
 .active {
     text-decoration: underline;
+    font-weight: 500;
 }
 
 .nav-item:hover {
@@ -62,6 +63,20 @@ img.logo {
     margin-top: 5%;
 
 }
+
+/* Form */
+
+/* Buttons */
+
+.btn-signup {
+    margin: 5px;
+}
+
+.btn-signup:hover {
+    background-color: #fee607;
+    color: #000;
+}
+
 
 /* Footer Section */
 

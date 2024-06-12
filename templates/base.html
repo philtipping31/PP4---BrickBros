@@ -50,7 +50,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+                <a class="nav-link {% if request.path == home %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Builds</a>
@@ -70,9 +70,9 @@
               {% endif %}
             </ul>
             {% if user.is_authenticated %}
-            <p class="text-end m-3 col align-self-end">You are logged in as {{ user }}</p>
+            <p class="text-end m-3 col align-self-end">Welcome! {{ user }}</p>
             {% else %}
-            <p class="text-end m-3 col align-self-end">You are not logged in</p>
+            <p class="text-end m-3 col align-self-end">You are not logged in to BrickBros</p>
             {% endif %}
           </div>
         </div>
