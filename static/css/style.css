@@ -56,6 +56,12 @@ img.logo {
 
 /* Login and Logout */ 
 
+.login-page {
+    border:1px solid black;
+    padding: 1%;
+    margin-top: 5%;
+
+}
 
 /* Footer Section */
 
