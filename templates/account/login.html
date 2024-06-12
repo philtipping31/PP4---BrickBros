@@ -9,7 +9,7 @@
 
 <div class="container login-page">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+        <div class="col-md-6 mt-3 offset-md-3">
             <h3>{% trans "Sign In" %}</h3>
 
             <p>{% blocktrans %}Welcome back to BrickBros. To fully engage with the site, please log in. If
@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+        <div class="col-md-6 mt-3 offset-md-3">
             <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
