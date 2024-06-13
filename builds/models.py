@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django_resized import ResizedImageField
 from cloudinary.models import CloudinaryField
 
 # Create your models here.
@@ -23,10 +22,7 @@ class Build(models.Model):
     user = models.ForeignKey(User, related_name='build_owner', on_delete=models.CASCADE)
     build_title = models.CharField(max_length=250, null=False, blank=False)
     slug = models.SlugField(max_length=250, unique=True)
-    image = ResizedImageField(
-        size=[400, None], quality=75, upload_to='builds/', force_format='WEBP',
-        blank=False, null=False
-    )
+    image = CloudinaryField('image', default='placeholder')
     image_alt = models.CharField(max_length=100, null=False, blank=False)
     set_number = models.IntegerField()
     build_time = models.DurationField()

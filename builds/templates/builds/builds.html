@@ -6,13 +6,18 @@
 
 <!-- Page Title-->
 
-<div class="container-fluid">
-    <div class="row">
-        <div id="title">
-            <h2>Lego Builds!</h2>
-        </div>
-    </div>       
+<div>
+    <h1 class="title">Recent Posts</h1>
 </div>
 
-        
+<!-- Lego Posts -->
+<body>
+    <h1>Posts </h1>
+    {% for build in object_list %}
+    <h2>{{build.build_title}}</h2>
+    <p>{{build.content}}</p>
+    <p>Author: {{build.user}}</p>
+    {% endfor %}
+</body>
+
 {% endblock %}

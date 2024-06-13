@@ -8,9 +8,10 @@ class BuildForm(forms.ModelForm):
     """
     class Meta:
         model = Build
-        fields = ['build_title', 'image', 'image_alt', 'set_number', 'build_time', 'build_type', 'difficulty_rating', 'content']
+        fields = ['build_title', 'slug', 'image', 'image_alt', 'set_number', 'build_time', 'build_type', 'difficulty_rating', 'content']
         labels = {
             'build_title': "Build Title",
+            'slug': "Slug",
             'image': "Build Image",
             'image_alt': "Describe Image",
             'set_number': "Model Number",
