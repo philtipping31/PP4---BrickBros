@@ -22,7 +22,6 @@ class Build(models.Model):
     """
     user = models.ForeignKey(User, related_name='build_owner', on_delete=models.CASCADE)
     build_title = models.CharField(max_length=250, null=False, blank=False)
-    featured_image = CloudinaryField('image', default='placeholder')
     slug = models.SlugField(max_length=250, unique=True)
     image = ResizedImageField(
         size=[400, None], quality=75, upload_to='builds/', force_format='WEBP',

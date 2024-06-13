@@ -8,7 +8,6 @@ from django_summernote.admin import SummernoteModelAdmin
 class BuildAdmin(admin.ModelAdmin):
     list_display = (
         'build_title',
-        'featured_image',
         'slug',
         'image',
         'build_time',

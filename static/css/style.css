@@ -28,8 +28,30 @@ main {
     background-color: whitesmoke;
 }
 
+#title h2{
+    -webkit-text-stroke: 1px black;
+    text-transform: uppercase;
+    font-size: 180%;
+    font-weight: bolder;
+    color: #fee607;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    text-align: center;
+}
 
-/* Header */
+.title{ 
+    -webkit-text-stroke: 1px black;
+    text-transform: uppercase;
+    font-size: 180%;
+    font-weight: bolder;
+    color: #fee607;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    text-align: center;
+}  
+
+
+/* Header & Nav */
 
 .navbar {
     box-shadow: 1px -1px 5px 0 #000;
@@ -38,6 +60,17 @@ main {
 a.nav-link {
     color:#000;
     font-size: large;
+}
+
+.dropdown-item.active{
+    text-decoration: underline;
+    font-weight: 500;
+    color: black;
+    background-color: #ffffff;
+}
+
+.dropdown-item:hover {
+    background-color: #fee607;
 }
 
 .active {
@@ -55,18 +88,7 @@ img.logo {
     border-radius: 50%;
 }
 
-/* Home Page */
 
-#title h2{
-    -webkit-text-stroke: 1px black;
-    text-transform: uppercase;
-    font-size: 180%;
-    font-weight: bolder;
-    color: #fee607;
-    letter-spacing: 2px;
-    margin-top: 30px;
-    text-align: center;
-}
 
 /* Hero Image */
 
@@ -107,6 +129,14 @@ img.logo {
 }
 
 /* Form */
+
+.form {
+    border:1px solid black;
+    box-shadow: 1px -1px 5px 0 #7b7b7a;
+    padding: 1%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
 
 /* Buttons */
 
