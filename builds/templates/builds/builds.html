@@ -4,6 +4,22 @@
 
 {% block content %}
 
+<!-- displaying Django messages -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible
+          fade show alert-bg mt-2" id="msg" role="alert">
+          {{ message | safe }}
+          <button type="button" class="btn-close"
+            data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
 <!-- Page Title-->
 
 <div>
@@ -20,7 +36,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body">
-                                <a href="#" class="post-link lego-builds" aria-label="Opens post {{build.build_title}}">
+                                <a href="{% url 'build_view' build.slug %}" class="post-link lego-builds" aria-label="Opens post {{build.build_title}}">
                                     <h2 class="card-title text-center">{{ build.build_title }}</h2>
                                 </a>
                                 <div class="image-container">
@@ -29,7 +45,9 @@
                                 <hr>
                                 <div class="text-center">
                                     <p>{{ build.excerpt }}</p>
-                                    <button type="submit" class="btn btn-outline-dark read-more">Read More</button>
+                                    <a href="{% url 'build_view' build.slug %}" class="post-link lego-builds" aria-label="Opens post {{build.build_title}}">
+                                        <button type="submit" class="btn btn-outline-dark read-more">Read More</button>
+                                    </a>
                                 </div>
                                 <hr />
                                 <p class="card-text text-muted h6">Post created on {{ build.created_on}} by {{ build.user }}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <a href="{% url 'builds' %}" class="post-link lego-builds" aria-label="Goes to all builds page">
+                    <button type="submit" class="btn btn-outline-dark mt-3">&laquo; Back to All Builds</button>
+                </a>
+                <!-- Title -->
+                <h1 class="post-title p-4">{{ build.build_title }}</h1>
+            </div>
+            <div class="d-md-block col-md-6 p-4">
+                <img src="{{build.image.url}}" class="card-img-top lego-img-main" alt="{{build.image_alt}}">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4 mt-3 left top main-view-text">
+            <div>
+                <p>
+                    <strong>Lego Set Name</strong>
+                </p>
+                <p>
+                    {{ build.build_title | safe }}
+                </p>
+                <p>
+                    <strong>Model Number</strong>
+                </p>
+                <p>
+                    {{ build.set_number }}
+                </p>
+                <p>
+                    <strong>Build Time (Minutes)</strong>
+                </p>
+                <p>
+                    {{ build.build_time }}
+                </p>
+                <p>
+                    <strong>Build Type</strong>
+                </p>
+                <p>
+                    {{ build.build_type }}
+                </p>
+                <p>
+                    <strong>Difficulty</strong>
+                </p>
+                <p>
+                    {{ build.difficulty_rating }}
+                </p>
+                <p>
+                    <strong>Desription</strong>
+                </p>
+                <p>
+                    {{ build.content }}
+                </p>
+            </div>
+            <hr>
+            <div>
+                <p class="post-subtitle">Created By {{ build.user }} | {{ build.created_on }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

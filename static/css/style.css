@@ -175,6 +175,19 @@ img.logo {
     object-fit: contain;
 }
 
+.main-view-text {
+    width: 95%;
+}
+
+/* Alerts */ 
+
+.alert-bg {
+    background-color: #fee607;
+    box-shadow: 1px -1px 5px 2px #7b7b7a;
+    color: #000;
+
+}
+
 /* Buttons */
 
 .btn {
