@@ -64,7 +64,7 @@
             <p class= "post-subtitle">Created By {{ build.user }} | {{ build.created_on }}</p>
             {% if request.user == build.user %}
                 <a href="" class="btn btn btn-signup btn-outline-dark mb-3">Edit</a>
-                <a href="" class="btn btn btn-signup btn-outline-dark mb-3">Delete</a>
+                <a href="{% url 'delete_build' build.id %}" class="btn btn btn-signup btn-outline-dark mb-3">Delete</a>
             </div>
 
             {% endif %}
