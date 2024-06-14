@@ -148,12 +148,16 @@ img.logo {
 
 /* Buttons */
 
-.btn-signup {
+.btn {
     margin: 5px;
 }
 
-.btn-signup:hover {
+.btn:hover {
     background-color: #fee607;
+    color: #000;
+}
+
+.page-link {
     color: #000;
 }
 

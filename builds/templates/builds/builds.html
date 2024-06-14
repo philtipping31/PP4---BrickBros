@@ -12,12 +12,55 @@
 
 <!-- Lego Posts -->
 <body>
-    <h1>Posts </h1>
-    {% for build in object_list %}
-    <h2>{{build.build_title}}</h2>
-    <p>{{build.content}}</p>
-    <p>Author: {{build.user}}</p>
-    {% endfor %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for build in object_list %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <a href="#" class="post-link">
+                                    <h2 class="card-title">{{ build.build_title }}</h2>
+                                </a>
+                                <div class="image-container">
+                                </div>
+                                <p>
+                                    {{build.content}}
+                                </p>
+    
+                                <hr />
+                                <p class="card-text text-muted h6">Post created on {{ build.created_on}} by {{ build.user }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+    
+                </div>
+            </div>
+        </div>
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li>
+                    <a href="?page={{ page_obj.previous_page_number }}"
+                    class="page-link btn">&laquo; PREV</a>
+                </li>
+                {% endif %}
+
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link btn"> NEXT &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
 </body>
 
 {% endblock %}

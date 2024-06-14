@@ -15,6 +15,7 @@ class Builds(generic.ListView):
     queryset = Build.objects.all()
     template_name = 'builds/builds.html'
     context_object_name = 'buildlist'
+    paginate_by = 3
 
 
 class AddBuild(LoginRequiredMixin, CreateView):
