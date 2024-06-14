@@ -28,6 +28,7 @@ class Build(models.Model):
     build_time = models.DurationField()
     build_type = models.CharField(max_length=50, choices=BUILD_TYPES, default="designed_by_lego")
     difficulty_rating = models.CharField(max_length=10, choices=DIFFICULTY_CHOICES, default="easy")
+    excerpt = models.CharField(max_length= 100, null=False, blank=False)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 

@@ -20,15 +20,17 @@
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body">
-                                <a href="#" class="post-link">
-                                    <h2 class="card-title">{{ build.build_title }}</h2>
+                                <a href="#" class="post-link lego-builds" aria-label="Opens post {{build.build_title}}">
+                                    <h2 class="card-title text-center">{{ build.build_title }}</h2>
                                 </a>
                                 <div class="image-container">
+                                    <img src="{{build.image.url}}" class="card-img-top lego-img" alt="{{build.image_alt}}">
                                 </div>
-                                <p>
-                                    {{build.content}}
-                                </p>
-    
+                                <hr>
+                                <div class="text-center">
+                                    <p>{{ build.excerpt }}</p>
+                                    <button type="submit" class="btn btn-outline-dark read-more">Read More</button>
+                                </div>
                                 <hr />
                                 <p class="card-text text-muted h6">Post created on {{ build.created_on}} by {{ build.user }}
                                 </p>

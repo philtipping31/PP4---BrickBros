@@ -138,13 +138,42 @@ img.logo {
     margin-bottom: 5%;
 }
 
-/* Card */
+/* Cards / Build posts */
 
 .lego-builds {
     text-decoration: none;
 }
 
+.card-title {
+    text-decoration: underline;
+    font-weight: bolder;
+    color: #000;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    text-align: center;
+}
 
+.card-body {
+    box-shadow: 1px -1px 5px 2px #7b7b7a;
+    background-color: #fee607;
+}
+
+.image-container{
+    position: relative;
+    width: 100%;
+    max-height: min-content;
+    padding-top: 45%;
+    overflow: hidden;
+}
+
+.lego-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
 /* Buttons */
 
@@ -159,6 +188,12 @@ img.logo {
 
 .page-link {
     color: #000;
+}
+
+
+.read-more:hover {
+    background-color: #000;
+    color: #fee607;
 }
 
 
