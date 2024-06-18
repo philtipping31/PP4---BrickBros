@@ -11,8 +11,13 @@
                 <!-- Title -->
                 <h1 class="post-title p-4">{{ build.build_title }}</h1>
             </div>
-            <div class="d-md-block col-md-6 p-4">
+            <div class="d-md-block col-md-6 p-4"><div class="image-container">
+                {% if "placeholder" in build.image.url %}
+                <img src="{% static 'images/lego-default.webp' %}" class="card-img-top lego-img-main"
+                alt="placeholder image">
+                {% else %}
                 <img src="{{build.image.url}}" class="card-img-top lego-img-main" alt="{{build.image_alt}}">
+                {% endif %}
             </div>
         </div>
     </div>
