@@ -12,10 +12,16 @@
             aria-label="Search">
         <button class="btn btn btn btn-signup btn-outline-dark" type="submit">Search</button>
     </form>
+    
 
-    <h1 class="title">Recent Posts</h1>
+    <h1 class="title">All Posts</h1>
     
         {% if search_initiated %}
+        <div class="text-center">
+        <a href="{% url 'builds' %}" class="post-link lego-builds text-center" aria-label="Goes to all builds page">
+            <button type="submit" class="btn btn-outline-dark mt-3">&laquo; Back to All Builds</button>
+        </a>
+        </div>
         <div class="container about">
             <h2>Search results for "{{ search_query }}":</h2>
         </div>
