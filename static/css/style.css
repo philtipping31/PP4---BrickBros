@@ -112,6 +112,14 @@ img.logo {
     background-color: rgba(109, 108, 107, 0.8);
 }
 
+/* Search Bar */ 
+
+.search-bar {
+    width: 100%;
+    margin-left: 2px;
+    color: #000;
+}
+
 /* About */
 
 .about {
@@ -275,6 +283,12 @@ footer {
         font-size: 170%;
         padding: 25px;
     }
+
+    .search-bar {
+        width: 50%;
+        margin-left: 25%;
+        color: #000;
+    }
 }
 
 /* Large devices (laptops and desktops, 992px and up) */
@@ -291,5 +305,11 @@ footer {
         text-align: right;
         font-size: 180%;
         padding: 25px;
+    }
+
+    .search-bar {
+        width: 35%;
+        margin-left: 63%;
+        color: #000;
     }
 }
