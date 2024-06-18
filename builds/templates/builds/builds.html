@@ -24,7 +24,12 @@
                                 <h2 class="card-title text-center">{{ build.build_title }}</h2>
                             </a>
                             <div class="image-container">
+                                {% if "placeholder" in build.image.url %}
+                                <img src="{% static 'images/lego-default.webp' %}" class="card-img-top lego-img"
+                                alt="placeholder image">
+                                {% else %}
                                 <img src="{{build.image.url}}" class="card-img-top lego-img" alt="{{build.image_alt}}">
+                                {% endif %}
                             </div>
                             <hr>
                             <div class="text-center">
