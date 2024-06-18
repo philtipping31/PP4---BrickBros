@@ -4,6 +4,8 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 
+from django.db.models import Q
+
 from django.contrib.auth.mixins import (
     LoginRequiredMixin, UserPassesTestMixin
 ) 
@@ -38,11 +40,30 @@ def build_view(request, slug):
 class Builds(generic.ListView):
     """
     View/Display all builds in one place.
+
+    Provides search functionality for model numbers. 
+    If a model number is a match, this will display.
+
     """
+
     queryset = Build.objects.all()
     template_name = 'builds/builds.html'
+    model = Build
     context_object_name = 'buildlist'
     paginate_by = 3
+
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get('search')
+        if query:
+            buildlist = self.model.objects.filter(
+                Q(set_number__icontains=query)
+            )
+        else:
+            buildlist = Build.objects.all()
+
+        return buildlist
+
+    
 
 
 class AddBuild(LoginRequiredMixin, CreateView):
