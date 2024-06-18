@@ -5,7 +5,7 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 # Choice Fields
-BUILD_TYPES = (("designed_by_lego", "Designed By Lego"), ("selfmade", "Self Made"))
+BUILD_TYPES = (("Designed By Lego", "Designed By Lego"), ("Self Made", "Self Made"))
 
 DIFFICULTY_CHOICES = [
     ('easy', 'Easy'),
@@ -26,7 +26,7 @@ class Build(models.Model):
     image_alt = models.CharField(max_length=100, null=False, blank=False)
     set_number = models.IntegerField()
     build_time = models.DurationField()
-    build_type = models.CharField(max_length=50, choices=BUILD_TYPES, default="designed_by_lego")
+    build_type = models.CharField(max_length=50, choices=BUILD_TYPES, default="Designed By Lego")
     difficulty_rating = models.CharField(max_length=10, choices=DIFFICULTY_CHOICES, default="easy")
     excerpt = models.CharField(max_length= 100, null=False, blank=False)
     content = models.TextField()

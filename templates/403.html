@@ -6,17 +6,13 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div>
-            <h1 class="title">Delete Lego Build Post</h1>
+        <div class="container text-center">
+            <h1>403 - Unauthorized Access</h1>
+            <p>You are not authorized to perform this particular action. Sorry!</p>
+            <p>Click below to go back to our Home Page</p>
+            <a href="{% url 'home' %}" class="btn btn btn-signup btn-outline-dark">Home Page</a>
         </div>
-        
-        
-    <div class="container text-center">
-        <h2>403 - Unauthorized Access</h2>
-        <p>You are not authorized to perform this particular action. Sorry!</p>
-        <p>Click below to go back to our Home Page</p>
-        <a href="{% url 'home' %}" class="btn btn btn-signup btn-outline-dark">Home Page</a>
-    </div>     
+    </div>
 </div>
 
-{% endblock %}
+    {% endblock %}

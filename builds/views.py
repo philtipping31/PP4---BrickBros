@@ -2,6 +2,7 @@ from django.views.generic import CreateView, ListView, DeleteView, UpdateView
 from django.views import generic
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 from django.contrib.auth.mixins import (
     LoginRequiredMixin, UserPassesTestMixin
@@ -55,8 +56,12 @@ class AddBuild(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        messages.add_message(
+            self.request,
+            messages.SUCCESS,
+            f'{self.request.user} your build post was succesfully submitted'
+        )
         response = super().form_valid(form)
-        messages.add_message(self.request, messages.SUCCESS, f'{self.request.user} your build post was succesfully submitted')
         return response
 
 
@@ -77,22 +82,15 @@ class EditBuild(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return response
 
 
-
-
-
-class DeleteBuild(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class DeleteBuild(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     """
     Delete a lego build post.
     """
     model = Build
     success_url = "/builds/"
+    success_message = 'Your build post was succesfully deleted'
 
     def test_func(self):
         return self.request.user == self.get_object().user
-
-    def delete(self, request, *args, **kwargs):
-        response = super().delete(request, *args, **kwargs)
-        messages.add_message(self.request, messages.SUCCESS, f'{self.request.user} your build post was succesfully deleted')
-        return response
 
 
