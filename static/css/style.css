@@ -112,12 +112,16 @@ img.logo {
     background-color: rgba(109, 108, 107, 0.8);
 }
 
-/* Search Bar */ 
+/* Search Bar & facilities */ 
 
 .search-bar {
     width: 100%;
     margin-left: 2px;
     color: #000;
+}
+
+#create-post-link {
+    text-decoration: underline;
 }
 
 /* About */

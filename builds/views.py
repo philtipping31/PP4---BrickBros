@@ -40,28 +40,31 @@ def build_view(request, slug):
 class Builds(generic.ListView):
     """
     View/Display all builds in one place.
-
     Provides search functionality for model numbers. 
     If a model number is a match, this will display.
-
     """
-
-    queryset = Build.objects.all()
     template_name = 'builds/builds.html'
     model = Build
     context_object_name = 'buildlist'
     paginate_by = 3
 
-    def get_queryset(self, **kwargs):
+    def get_queryset(self):
         query = self.request.GET.get('search')
         if query:
             buildlist = self.model.objects.filter(
                 Q(set_number__icontains=query)
             )
         else:
-            buildlist = Build.objects.all()
-
+            buildlist = self.model.objects.all()
         return buildlist
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        query = self.request.GET.get('search', '')
+        context['search_query'] = query
+        context['search_initiated'] = bool(query)
+        context['no_results'] = self.get_queryset().count() == 0 and query != ''
+        return context
 
     
 

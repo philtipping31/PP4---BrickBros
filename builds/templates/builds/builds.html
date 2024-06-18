@@ -3,15 +3,29 @@
 {% load static %}
 
 {% block content %}
-  
+
 <!-- Page Title-->
 
 <div>
     <form class="d-flex search-bar mt-3" role="search" method="GET" action="{% url 'builds' %}">
-        <input class="form-control me-2" name="search" type="search" placeholder="Search for a model number" aria-label="Search">
+        <input class="form-control me-2" name="search" type="search" placeholder="Search for a model number"
+            aria-label="Search">
         <button class="btn btn btn btn-signup btn-outline-dark" type="submit">Search</button>
-      </form>
-      <h1 class="title">Recent Posts</h1>
+    </form>
+
+    <h1 class="title">Recent Posts</h1>
+    
+        {% if search_initiated %}
+        <div class="container about">
+            <h2>Search results for "{{ search_query }}":</h2>
+        </div>
+            {% if no_results %}
+            <div class="container about">
+                <p>No results found for "{{ search_query }}".</p>
+                <p>Want to be the first one to post? Create a post <a id="create-post-link" href="{% url 'add_build' %}">HERE!</a></p>
+            </div>
+            {% endif %}
+    {% endif %}
 </div>
 
 <!-- Lego Posts -->
@@ -30,7 +44,7 @@
                             <div class="image-container">
                                 {% if "placeholder" in build.image.url %}
                                 <img src="{% static 'images/lego-default.webp' %}" class="card-img-top lego-img"
-                                alt="placeholder image">
+                                    alt="placeholder image">
                                 {% else %}
                                 <img src="{{build.image.url}}" class="card-img-top lego-img" alt="{{build.image_alt}}">
                                 {% endif %}
@@ -54,7 +68,6 @@
             <div class="row">
                 {% endif %}
                 {% endfor %}
-
             </div>
         </div>
     </div>
