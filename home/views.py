@@ -8,4 +8,3 @@ class Home(TemplateView):
     Class based view to render home page.
     """
     template_name = 'home/index.html'
-

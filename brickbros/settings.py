@@ -30,8 +30,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["8000-philtipping-pp4brickbro-k1qg35holpj.ws.codeinstitute-ide.net",
-'.herokuapp.com']
+ALLOWED_HOSTS = [
+    "8000-philtipping-pp4brickbro-k1qg35holpj.ws.codeinstitute-ide.net",
+    '.herokuapp.com']
 
 
 # Application definition
@@ -50,7 +51,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
-    #Apps
+
+    # Apps
     'cloudinary',
     'crispy_forms',
     'crispy_bootstrap5',

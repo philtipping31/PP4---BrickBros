@@ -30,8 +30,15 @@ File passed checks first time.
 
 Python files were checked using the [CI PEP8 Linter](https://pep8ci.herokuapp.com/)
 
-All issues were resolved and files now pass checks.
+Issues were resolved and files now pass checks.
 
+![PEP8 Tests](readmedocs/screenshots/pep8-validation.png)
+
+#### Outstanding.
+I had a few lines too long in the settings.py as shown below:
+
+
+![PEP8 Setting.py](readmedocs/screenshots/pep8-settingpy.png)
 
 ## Manual Testing
 
