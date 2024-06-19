@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load i18n %}
+
 {% load account socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
@@ -14,7 +15,7 @@
 
             <p>{% blocktrans %}Welcome back to BrickBros. To fully engage with the site, please log in. If
                 you
-                have not created an account yet, then please <a class="link" href="{{ signup_url }}">sign up</a>
+                have not created an account yet, then please <a class="link signup" href="{{ signup_url }}">sign up</a>
                 first.{% endblocktrans %}</p>
         </div>
     </div>
