@@ -20,7 +20,9 @@ All issues were resolved and files now pass checks.
 
 CCS Files were tested using ![W3C Schools CCS Validator](https://jigsaw.w3.org/css-validator/)
 
-All issues were resolved and files now pass checks.
+File passed checks first time.
+
+![CSS Checks](readmedocs/screenshots/css-checks.png)
 
 
 
