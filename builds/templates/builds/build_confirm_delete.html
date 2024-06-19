@@ -16,6 +16,7 @@
             <form method="post" class="text-center">
                 {% csrf_token %}
                 <p>Are you sure you want to delete your post {{object.build_title}}?</p>
+                <p>This action is not reversable!</p>
                 <input type="submit" value="Confirm" class="btn btn btn-signup btn-outline-dark">
             </form>
         </div>
