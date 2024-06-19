@@ -83,7 +83,7 @@ class AddBuild(LoginRequiredMixin, CreateView):
         messages.add_message(
             self.request,
             messages.SUCCESS,
-            f'{self.request.user} your build post was succesfully submitted'
+            f'{self.request.user} your build post was successfully submitted'
         )
         response = super().form_valid(form)
         return response
@@ -102,7 +102,7 @@ class EditBuild(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         response = super().form_valid(form)
-        messages.add_message(self.request, messages.SUCCESS, f'{self.request.user} your build post was succesfully edited')
+        messages.add_message(self.request, messages.SUCCESS, f'{self.request.user} your build post was successfully edited')
         return response
 
 
@@ -112,7 +112,7 @@ class DeleteBuild(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, 
     """
     model = Build
     success_url = "/builds/"
-    success_message = 'Your build post was succesfully deleted'
+    success_message = 'Your build post was successfully deleted'
 
     def test_func(self):
         return self.request.user == self.get_object().user
