@@ -18,3 +18,4 @@ class BuildAdmin(admin.ModelAdmin):
         'created_on'
     )
     list_filter = ('build_type',)
+    prepopulated_fields = {'slug': ('build_title',)}
