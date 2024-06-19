@@ -103,7 +103,7 @@ img.logo {
     margin-left: 2px;
 }
 
-#hero-text h1 {
+#hero-text h2 {
     text-align: left;
     position: absolute;
     bottom: 0;
@@ -301,13 +301,13 @@ footer {
     /* Hero Styles */
     #hero-text {
         width: 550px;
-        height: 150px;
+        height: 130px;
         right: 40px;
     }
 
     #hero-text h2 {
         text-align: right;
-        font-size: 180%;
+        font-size: 130%;
         padding: 25px;
     }
 

@@ -1,23 +1,28 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
 {% load static %}
+ 
+{% block content %}
 
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <a href="{% url 'builds' %}" class="post-link lego-builds" aria-label="Goes to all builds page">
-                    <button type="submit" class="btn btn-outline-dark mt-3">&laquo; Back to All Builds</button>
+                <a href="{% url 'builds' %}" class="post-link lego-builds btn btn-outline-dark mt-3" aria-label="Goes to all builds page">
+                    &laquo; Back to All Builds
                 </a>
                 <!-- Title -->
                 <h1 class="post-title p-4">{{ build.build_title }}</h1>
             </div>
-            <div class="d-md-block col-md-6 p-4"><div class="image-container">
-                {% if "placeholder" in build.image.url %}
-                <img src="{% static 'images/lego-default.webp' %}" class="card-img-top lego-img-main"
-                alt="placeholder image">
-                {% else %}
-                <img src="{{build.image.url}}" class="card-img-top lego-img-main" alt="{{build.image_alt}}">
-                {% endif %}
+            <div class="d-md-block col-md-6 p-4">
+                <div class="image-container">
+                    {% if "placeholder" in build.image.url %}
+                    <img src="{% static 'images/lego-default.webp' %}" class="card-img-top lego-img-main"
+                    alt="placeholder image">
+                    {% else %}
+                    <img src="{{build.image.url}}" class="card-img-top lego-img-main" alt="{{build.image_alt}}">
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
@@ -40,7 +45,7 @@
                     {{ build.set_number }}
                 </p>
                 <p>
-                    <strong>Build Time (Minutes)</strong>
+                    <strong>Build Time (Days/Hours/Minutes)</strong>
                 </p>
                 <p>
                     {{ build.build_time }}
@@ -65,15 +70,13 @@
                 </p>
             </div>
             <div class="p-3 ">
-            <hr>
-            <p class= "post-subtitle">Created By {{ build.user }} | {{ build.created_on }}</p>
-            {% if request.user == build.user %}
-                <a href="{% url 'edit_build' build.id %}" class="btn btn btn-signup btn-outline-dark mb-3">Edit</a>
-                <a href="{% url 'delete_build' build.id %}" class="btn btn btn-signup btn-outline-dark mb-3">Delete</a>
+                <hr>
+                <p class= "post-subtitle">Created By {{ build.user }} | {{ build.created_on }}</p>
+                {% if request.user == build.user %}
+                    <a href="{% url 'edit_build' build.id %}" class="btn btn btn-signup btn-outline-dark mb-3">Edit</a>
+                    <a href="{% url 'delete_build' build.id %}" class="btn btn btn-signup btn-outline-dark mb-3">Delete</a>
+                {% endif %}
             </div>
-
-            {% endif %}
-
         </div>
     </div>
 </div>

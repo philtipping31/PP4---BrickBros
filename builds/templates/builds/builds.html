@@ -18,8 +18,7 @@
     
         {% if search_initiated %}
         <div class="text-center">
-        <a href="{% url 'builds' %}" class="post-link lego-builds text-center" aria-label="Goes to all builds page">
-            <button type="submit" class="btn btn-outline-dark mt-3">&laquo; Back to All Builds</button>
+        <a href="{% url 'builds' %}" class="post-link lego-builds text-center btn btn-outline-dark mt-3" aria-label="Goes to all builds page">&laquo; Back to All Builds
         </a>
         </div>
         <div class="container about">
@@ -58,9 +57,8 @@
                             <hr>
                             <div class="text-center">
                                 <p>{{ build.excerpt }}</p>
-                                <a href="{% url 'build_view' build.slug %}" class="post-link lego-builds"
-                                    aria-label="Opens post {{build.build_title}}">
-                                    <button type="submit" class="btn btn-outline-dark read-more">Read More</button>
+                                <a href="{% url 'build_view' build.slug %}" class="post-link lego-builds btn btn-outline-dark read-more"
+                                    aria-label="Opens post {{build.build_title}}">Read More
                                 </a>
                             </div>
                             <hr />

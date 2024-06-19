@@ -9,149 +9,160 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Meta tags for search engines-->
-    <meta name="description"
-        content="">
-    <meta name="keywords"
-        content="">
+  <!-- Meta tags for search engines-->
+  <meta name="description"
+    content="Brick Bros - A lego build sharing site to post and view different lego builds within a safe community">
+  <meta name="keywords" content="lego, brickbros, sharing, posts, blog, legobuilding, legosharing, legosets">
 
-    <!-- Bootstrap CSS -->
-    {% block extra_css %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  <!-- Bootstrap CSS -->
+  {% block extra_css %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  {% endblock %}
+
+
+  <!-- Favicon imports -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+
+  <title>BrickBros</title>
+</head>
+
+<body>
+
+  <!-- Nav Bar -->
+  <header>
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt="BrickBros Logo"
+            class="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Nav items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
+                href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Builds
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item {% if request.path == builds_url %}active{% endif %}"
+                    href="{% url 'builds' %}">All Builds</a></li>
+                <li><a class="dropdown-item {% if request.path == add_build_url %}active{% endif %}"
+                    href="{% url 'add_build' %}">Add Build</a></li>
+              </ul>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                href="{% url 'account_logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                href="{% url 'account_signup' %}">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                href="{% url 'account_login' %}">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+          {% if user.is_authenticated %}
+          <p class="text-end m-3 col align-self-end">Welcome! {{ user }}</p>
+          {% else %}
+          <p class="text-end m-3 col align-self-end">You are not logged in to BrickBros</p>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero Image & Text Overlay -->
+    <section id="hero" aria-label="lego bricks and slogan 'Share your builds'">
+      <div id="hero-text">
+        <h2 class="title">
+          Share your builds!
+        </h2>
+      </div>
+    </section>
+
+    <!-- displaying Django messages -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          {% for message in messages %}
+          <div class="alert {{ message.tags }} alert-dismissible
+          fade show alert-bg mt-2" id="msg" role="alert">
+            {{ message | safe }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {% block content %}
+    <!-- Main content entered here -->
     {% endblock %}
 
 
-    <!-- Favicon imports -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+  </main>
 
-    <title>BrickBros</title>
-</head>
-
-<!-- Nav Bar -->
-<header>
-    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-        <!-- Logo -->
-          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt="BrickBros Logo" class="logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- Nav items -->
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Builds
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item {% if request.path == builds_url %}active{% endif %}" href="{% url 'builds' %}">All Builds</a></li>
-                  <li><a class="dropdown-item {% if request.path == add_build_url %}active{% endif %}" href="{% url 'add_build' %}">Add Build</a></li>
-                </ul>
-              </li>
-              {% if user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
-              </li>
-              {% else %}
-              <li class="nav-item">
-                <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                  href="{% url 'account_signup' %}">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
-              </li>
-              {% endif %}
-            </ul>
-            {% if user.is_authenticated %}
-            <p class="text-end m-3 col align-self-end">Welcome! {{ user }}</p>
-            {% else %}
-            <p class="text-end m-3 col align-self-end">You are not logged in to BrickBros</p>
-            {% endif %}
-          </div>
-        </div>
-      </nav>
-</header>
-<body>
-    <main>
-      <!-- Hero Image & Text Overlay -->
-      <section id="hero"
-      aria-label="lego bricks and slogan 'Share your builds'">
-      <div id="hero-text">
-          <h1 class="title">
-              Share your builds!
-          </h1>
-      </div>
-  </section>
-  <!-- displaying Django messages -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        {% for message in messages %}
-        <div class="alert {{ message.tags }} alert-dismissible
-          fade show alert-bg mt-2" id="msg" role="alert">
-          {{ message | safe }}
-          <button type="button" class="btn-close"
-            data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-
-        {% block content %}
-        {% endblock %}
-
-    </main>
-
-    <!-- Footer Section -->
-<footer class="footer-bg">
+  <!-- Footer Section -->
+  <footer class="footer-bg">
     <ul id="social-media">
-        <li><a href="https://www.facebook.com" target="_blank" rel="noopener"
-                aria-label="Follow me on Facebook (opens in a new tab)">
-                <i class="fa-brands fa-facebook" title="Follow me on Facebook"></i></a>
-        </li>
-        <li><a href="https://www.instagram.com" target="_blank" rel="noopener"
-                aria-label="Follow me on Instagram (opens in a new tab)">
-                <i class="fa-brands fa-instagram" title="Follow me on Instagram"></i></a>
-        </li>
-        <li><a href="https://www.tiktok.com/@philtipping31" target="_blank" rel="noopener"
-            aria-label="Follow me on TikTok (opens in a new tab)">
-            <i class="fa-brands fa-tiktok" title="Follow me on Tiktok"></i></a>
-        </li>
-        <li><a href="https://github.com/philtipping31" target="_blank" rel="noopener"
-            aria-label="Follow me on GitHub (opens in a new tab)">
-            <i class="fa-brands fa-github" title="Follow me on Github"></i></a>
-        </li>
+      <li><a href="https://www.facebook.com" target="_blank" rel="noopener"
+          aria-label="Follow me on Facebook (opens in a new tab)">
+          <i class="fa-brands fa-facebook" title="Follow me on Facebook"></i></a>
+      </li>
+      <li><a href="https://www.instagram.com" target="_blank" rel="noopener"
+          aria-label="Follow me on Instagram (opens in a new tab)">
+          <i class="fa-brands fa-instagram" title="Follow me on Instagram"></i></a>
+      </li>
+      <li><a href="https://www.tiktok.com/@philtipping31" target="_blank" rel="noopener"
+          aria-label="Follow me on TikTok (opens in a new tab)">
+          <i class="fa-brands fa-tiktok" title="Follow me on Tiktok"></i></a>
+      </li>
+      <li><a href="https://github.com/philtipping31" target="_blank" rel="noopener"
+          aria-label="Follow me on GitHub (opens in a new tab)">
+          <i class="fa-brands fa-github" title="Follow me on Github"></i></a>
+      </li>
     </ul>
     <p class="text-center copyright">
-        Created by Phil Tipping for Code Institute project portfolio | 2024
+      Created by Phil Tipping for Code Institute project portfolio | 2024
     </p>
-</footer>
+  </footer>
 
   <!-- Font Awesome Link -->
   <script src="https://kit.fontawesome.com/c2f2557f2c.js" crossorigin="anonymous"></script>
 
+  <!-- JavaScript jQuery, Popper, Bootstrap JS -->
+ 
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 
 </body>
-
-<!-- JavaScript jQuery, Popper, Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-</script>
-
 
 </html>
