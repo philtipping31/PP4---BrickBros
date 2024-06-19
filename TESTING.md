@@ -8,7 +8,7 @@ The project was also tested frequently via Google Chrome Dev Tools for display i
 
 ### HTML Checks
 
-All Html files were tested using ![W3C Schools validator](https://validator.w3.org/) in logged in and logged out state.
+All Html files were tested using [W3C Schools validator](https://validator.w3.org/) in logged in and logged out state.
 
 All issues were resolved and files now pass checks.
 
@@ -18,7 +18,7 @@ All issues were resolved and files now pass checks.
 
 ### CSS Checks
 
-CCS Files were tested using ![W3C Schools CCS Validator](https://jigsaw.w3.org/css-validator/)
+CCS Files were tested using [W3C Schools CCS Validator](https://jigsaw.w3.org/css-validator/)
 
 File passed checks first time.
 
@@ -28,7 +28,7 @@ File passed checks first time.
 
 ### Python Checks
 
-Python files were checked using the ![CI PEP8 Linter](https://pep8ci.herokuapp.com/)
+Python files were checked using the [CI PEP8 Linter](https://pep8ci.herokuapp.com/)
 
 All issues were resolved and files now pass checks.
 
