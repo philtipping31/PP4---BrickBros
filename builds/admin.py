@@ -4,6 +4,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
 
+
 @admin.register(Build)
 class BuildAdmin(admin.ModelAdmin):
     list_display = (

@@ -4,14 +4,17 @@ from .models import Build
 
 class BuildForm(forms.ModelForm):
     """
-    A form to add a lego build.
+    A form for creating and updating lego build posts.
+
     """
     class Meta:
         model = Build
-        fields = ['build_title', 'slug', 'image', 'image_alt', 'set_number', 'build_time', 'build_type', 'difficulty_rating', 'excerpt', 'content',]
+        fields = ['build_title', 'slug', 'image', 'image_alt',
+                  'set_number', 'build_time', 'build_type',
+                  'difficulty_rating', 'excerpt', 'content']
         labels = {
             'build_title': "Build Title",
-            'slug': "Slug (Your build title lowercase and spaces replaced with '-')",
+            'slug': "Slug (Title lowercase, and spaces replaced with '-')",
             'image': "Build Image",
             'image_alt': "Describe Image",
             'set_number': "Model Number",
@@ -21,4 +24,3 @@ class BuildForm(forms.ModelForm):
             "excerpt": "Short Description",
             "content": "Write something about the build"
         }
-

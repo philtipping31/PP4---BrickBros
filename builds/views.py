@@ -8,11 +8,12 @@ from django.db.models import Q
 
 from django.contrib.auth.mixins import (
     LoginRequiredMixin, UserPassesTestMixin
-) 
+)
 from .models import Build
 from .forms import BuildForm
 
 # Create your views here.
+
 
 def build_view(request, slug):
     """
@@ -34,13 +35,14 @@ def build_view(request, slug):
     return render(
         request,
         "builds/build_view.html",
-        {"build": build },
+        {"build": build},
     )
+
 
 class Builds(generic.ListView):
     """
     View/Display all builds in one place.
-    Provides search functionality for model numbers. 
+    Provides search functionality for model numbers.
     If a model number is a match, this will display.
     """
     template_name = 'builds/builds.html'
@@ -63,14 +65,13 @@ class Builds(generic.ListView):
         query = self.request.GET.get('search', '')
         context['search_query'] = query
         context['search_initiated'] = bool(query)
-        context['no_results'] = self.get_queryset().count() == 0 and query != ''
+        context[
+            'no_results'] = self.get_queryset().count() == 0 and query != ''
         return context
-
-    
 
 
 class AddBuild(LoginRequiredMixin, CreateView):
-    """ 
+    """
     A class view to add a Lego build.
     """
     template_name = 'builds/add_build.html'
@@ -92,7 +93,7 @@ class AddBuild(LoginRequiredMixin, CreateView):
 class EditBuild(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """Edit a build form/post"""
     template_name = "builds/edit_build.html"
-    model= Build
+    model = Build
     form_class = BuildForm
     success_url = '/builds/'
 
@@ -102,11 +103,14 @@ class EditBuild(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         response = super().form_valid(form)
-        messages.add_message(self.request, messages.SUCCESS, f'{self.request.user} your build post was successfully edited')
+        messages.add_message(
+            self.request, messages.SUCCESS,
+            f'{self.request.user} your build post was successfully edited')
         return response
 
 
-class DeleteBuild(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
+class DeleteBuild(LoginRequiredMixin, UserPassesTestMixin,
+                  SuccessMessageMixin, DeleteView):
     """
     Delete a lego build post.
     """
@@ -116,5 +120,3 @@ class DeleteBuild(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, 
 
     def test_func(self):
         return self.request.user == self.get_object().user
-
-
