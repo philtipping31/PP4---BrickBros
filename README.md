@@ -18,3 +18,90 @@ Using a combination of HTML, CSS, JavaScript and Python (Using the Django FrameW
 The site is responsive and can be used and view on all screen sizes!
 
 ![Responsive Mockup of BrickBros](readmedocs/images/responsive-design.png)
+
+
+
+## Contents
+
+
+## User Experience (UX)
+
+### First Time User Goals
+
+### Returning User Goals
+
+### Agile Working
+
+
+
+## Website Design
+
+### Wire Frames
+
+### Colour Scheme
+
+### Data Model
+
+
+
+## Page Security
+
+### env.py 
+
+### Defensive Programming
+
+### Input Validation
+
+### Toast Messages
+
+
+
+## Features
+
+### General
+
+### NavBar
+
+### Home Page
+
+### All Builds
+
+### Search Bar
+
+### Detailed View 
+
+### Add Build
+
+### Login / Logout / Register
+
+### Accessibility 
+
+### Responsive Design (Mobile and Tablet views)
+
+
+
+## Technologies and Programmes Used
+
+
+## Deployment
+
+### Environment and Settings
+
+### Deployment to Heroku
+
+### Local Deployment
+
+#### Forking
+
+#### Cloning
+
+
+## Additional Content and Credits
+
+### Media/Logos/Images
+
+### Documentation Used
+
+## Acknowlegements
+
+

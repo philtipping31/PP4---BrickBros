@@ -86,6 +86,9 @@ A 403 page were created and tested so that if a user tries to access a URL to de
 
 ![403 page](readmedocs/screenshots/403-page.png)
 
+
+
+
 A 404 page was created so that if a user enters an incorrect URL they will be given a 404 page notifying them of this and allow the user to navigate to the home page easily.
 
 ![404 page](readmedocs/screenshots/404-page.png)
@@ -99,6 +102,8 @@ Lighthouse tests were run in an incognito window.
 ![Lighthouse Test home](readmedocs/screenshots/homepage-lighthouse.png)
 
 ![Lighthouse Test Add Build](readmedocs/screenshots/addbuild-lighthouse.png)
+
+
 
 Issues found with best practices on all builds page due to Cloudinary Images 
 
