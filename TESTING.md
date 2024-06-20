@@ -76,5 +76,62 @@ No sorting
 
 ## Manual Testing
 
+### Responsiveness
+
+Site was tested using Chrome Dev Tools with the responsiveness section. Ensuring the webpage can be clearly used on all screensizes/devices.
+
+### 403 and 404 pages
+
+A 403 page were created and tested so that if a user tries to access a URL to delete a post when they do not own it, the 403 page is displayed notifying the user that they are not authorized to perform the action. 
+
+![403 page](readmedocs/screenshots/403-page.png)
+
+A 404 page was created so that if a user enters an incorrect URL they will be given a 404 page notifying them of this and allow the user to navigate to the home page easily.
+
+![404 page](readmedocs/screenshots/404-page.png)
+
+
+
+### Lighthouse Tests
+
+Lighthouse tests were run in an incognito window. 
+
+![Lighthouse Test home](readmedocs/screenshots/homepage-lighthouse.png)
+
+![Lighthouse Test Add Build](readmedocs/screenshots/addbuild-lighthouse.png)
+
+Issues found with best practices on all builds page due to Cloudinary Images 
+
+![Lighthouse Test all builds](readmedocs/screenshots/all-builds-lighthouse.png)
+
+
+### Navbar 
+
+| Test                                                                                                      | Action                                                                                                                                         | Expected                                                                                                                                                                       | Result (Pass/Fail) |
+| --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ |
+| Nav Bar shows Home / Builds drop down > All Builds / Add Build and Register / Login for a first time user | Visit the site as a logged out user and check correct nav items are showing and navigate to the correct page                                   | Nav items correctly display and open the correct page                                                                                                                          | Pass               |
+| Nav Bar Shows Same options, but Login changes to Logout when user is logged in                            | Login to the website and check the nav bar has removed login and register and now shows all items as normal but the logout link is an option   | Nav items correctly display and open the correct page                                                                                                                          | Pass               |
+| Nav Bar items direct the user to the correct location                                                     | Test all navbar links by clicking on them and checking the correct page loads                                                                  | All nav items are directing the user to the correct location                                                                                                                   | Pass               |
+| Nav bar works in tablet/mobile view                                                                       | Use chrome dev tools on responsive mode and also open webpage on a mobile device to check full functionality of the the nav bar view and links | All nav items are hidden in a closed button, clicking on this opens the nav menu and all items are shown based on the current state and open up the correct page when selected | Pass               |
+
+
+### Footer 
+
+| Test                                                       | Action                                                                                       | Expected                                                          | Result (Pass/Fail) |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------ |
+| All footer links open in a new tab to the correct location | Click on each footer social and check that the correct social page is opened up in a new tab | All links direct to the correct location and in a new browser tab | Pass               |
+
+
+### Pagination
+
+| Test                                                                                          | Action                                                    | Expected                                                                                                             | Result (Pass/Fail) |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| Pagination works correctly as per code of 3 per page                                          | Each builds page clearly shows 3 builds posts             | 3 Builds posts show on each page                                                                                     | Pass               |
+| If more than 3, next button shows                                                             | Add more than three builds to see the next button appear. | The next button shows and clearly moves the user to see the next set of builds over 3                                | Pass               |
+| if more than 9 the middle set of three allows the user to see previous button and next button | Add more builds so posts extend over multiple pages.      | Next and Prev button clearly show and operate as intended, taking the user from page to page to see all builds posts | Pass               |
+
+
+
+
 
 
