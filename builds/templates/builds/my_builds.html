@@ -4,33 +4,9 @@
 
 {% block content %}
 
-<!-- Search Bar -->
-<div>
-    <form class="d-flex search-bar mt-3" role="search" method="GET" action="{% url 'builds' %}">
-        <input class="form-control me-2" name="search" type="search" placeholder="Search for a model number"
-            aria-label="Search">
-        <button class="btn btn btn btn-signup btn-outline-dark" type="submit">Search</button>
-    </form>
-    
-    <!-- Page Title-->
-    <h1 class="title">All Posts</h1>
-    
-        {% if search_initiated %}
-        <div class="text-center">
-        <a href="{% url 'builds' %}" class="post-link lego-builds text-center btn btn-outline-dark mt-3" aria-label="Goes to all builds page">&laquo; Back to All Builds
-        </a>
-        </div>
-        <div class="container about">
-            <h2>Search results for "{{ search_query }}":</h2>
-        </div>
-            {% if no_results %}
-            <div class="container about">
-                <p>No results found for "{{ search_query }}".</p>
-                <p>Want to be the first one to post? Create a post <a id="create-post-link" href="{% url 'add_build' %}">HERE!</a></p>
-            </div>
-            {% endif %}
-    {% endif %}
-</div>
+<!-- Page Title-->
+
+<h1 class="title">Your Posts</h1>
 
 <!-- Lego Posts -->
 <div class="container-fluid">
@@ -88,6 +64,11 @@
             {% endif %}
         </ul>
     </nav>
+    {% else %}
+                <div class="container about">
+                    <p>You have not posted yet! <i class="fa-solid fa-face-frown"></i> </p>
+                    <p>Want to add your first post? Create a post <a id="create-post-link" href="{% url 'add_build' %}">HERE!</a></p>
+                </div>
     {% endif %}
 </div>
 

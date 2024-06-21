@@ -39,6 +39,17 @@ def build_view(request, slug):
     )
 
 
+class UserBuildsView(LoginRequiredMixin, ListView):
+    model = Build
+    template_name = 'builds/my_builds.html'
+    context_object_name = 'mybuilds'
+    paginate_by = 3
+
+    def get_queryset(self):
+        # Filter builds by the logged-in user
+        return Build.objects.filter(user=self.request.user).order_by('-created_on')
+
+
 class Builds(generic.ListView):
     """
     View/Display all builds in one place.
