@@ -41,7 +41,7 @@ def build_view(request, slug):
 
 class UserBuildsView(LoginRequiredMixin, ListView):
     """
-    Shows a filtered view of all builds. 
+    Shows a filtered view of all builds.
     Template used - my_builds.html
 
     Queries the database to look for the posts linked
@@ -55,7 +55,8 @@ class UserBuildsView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         # Filter builds by the logged-in user
-        return Build.objects.filter(user=self.request.user).order_by('-created_on')
+        return Build.objects.filter(
+            user=self.request.user).order_by('-created_on')
 
 
 class Builds(generic.ListView):
