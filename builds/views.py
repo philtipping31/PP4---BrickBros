@@ -40,6 +40,14 @@ def build_view(request, slug):
 
 
 class UserBuildsView(LoginRequiredMixin, ListView):
+    """
+    Shows a filtered view of all builds. 
+    Template used - my_builds.html
+
+    Queries the database to look for the posts linked
+    to a specific user and displays them in most recently
+    created order.
+    """
     model = Build
     template_name = 'builds/my_builds.html'
     context_object_name = 'mybuilds'
