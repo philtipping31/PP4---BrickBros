@@ -6,19 +6,20 @@
 {% block content %}
 
 
-<!-- Page Title-->
-
 <div class="container-fluid">
     <div class="row">
         <div>
-            <a href="{% url 'builds' %}" class="post-link lego-builds" aria-label="Goes to all builds page">
-                <button type="submit" class="btn btn-outline-dark mt-3">&laquo; Back to All Builds</button>
+            <!--Back to all builds button-->
+            <a href="{% url 'builds' %}" class="post-link lego-builds btn btn-outline-dark mt-3" aria-label="Goes to all builds page">
+                &laquo; Back to All Builds
             </a>
+            <!-- Page Title-->
             <h1 class="title">Edit your build posts here!</h1>
         </div>
     </div>       
 </div>
 
+<!--Edit post form-->
 <div class="container">
     <form method="POST" enctype="multipart/form-data" class="p-5 form">
         <h2 class="text-center title"> Edit Build Post</h2>

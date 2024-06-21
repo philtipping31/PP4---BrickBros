@@ -6,6 +6,7 @@
 
 <div class="container-fluid">
     <div class="row">
+        <!-- Page Title -->
         <div>
             <h1 class="title">Confirm Delete Post</h1>
         </div>
@@ -13,6 +14,7 @@
         
     <div class="container">
         <div>
+            <!--Text area to confirm post deleteion-->
             <form method="post" class="text-center">
                 {% csrf_token %}
                 <p>Are you sure you want to delete your post {{object.build_title}}?</p>

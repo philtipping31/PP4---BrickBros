@@ -50,6 +50,7 @@
             </div>
         </div>
     </div>
+    <!-- Pagination for 3 posts per page-->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
@@ -64,6 +65,7 @@
             {% endif %}
         </ul>
     </nav>
+    <!-- If user has no posts -->
     {% else %}
                 <div class="container about">
                     <p>You have not posted yet! <i class="fa-solid fa-face-frown"></i> </p>

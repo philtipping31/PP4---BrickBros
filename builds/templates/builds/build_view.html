@@ -8,6 +8,7 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
+                <!--Button link to go back to all builds-->
                 <a href="{% url 'builds' %}" class="post-link lego-builds btn btn-outline-dark mt-3" aria-label="Goes to all builds page">
                     &laquo; Back to All Builds
                 </a>
@@ -28,6 +29,7 @@
     </div>
 </div>
 
+<!--Detailed Build View-->
 <div class="container">
     <div class="row">
         <div class="col card mb-4 mt-3 left top main-view-text">
@@ -71,6 +73,7 @@
             </div>
             <div class="p-3 ">
                 <hr>
+                <!--If user created post, edit and delete buttons-->
                 <p class= "post-subtitle">Created By {{ build.user }} | {{ build.created_on }}</p>
                 {% if request.user == build.user %}
                     <a href="{% url 'edit_build' build.id %}" class="btn btn btn-signup btn-outline-dark mb-3">Edit</a>
