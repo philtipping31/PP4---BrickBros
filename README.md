@@ -324,8 +324,18 @@ A 404 page was created so that if a user enters an incorrect URL they will be gi
 ![404 page](readmedocs/screenshots/404-page.png)
 
 
+## Features not yet implemented
 
-## Deployment
+- Ability to rate builds out of 5 stars
+- User profile, this would consist of the my builds in condensed view, liked builds, edit/update and delete user profile.
+- Auto populate the slug field on Add Post to improve user experience. I could only work this out from an Admin point and not a front end user. 
+- Post Comments - I did not add this due to it already being added to the CodeStar blog so would have been a direct copy.
+- Draft Posts - This would allow a user to draft a post and save it for later, linking to the user profile section.
+- Lego Categories - Have an option on the add build to categorise the build. This would of then filtered into a navbar menu for Categories. Allowing a user to just view posts relating to a particular lego category.
+
+
+
+## Deployment
 
 ### Environment and Settings
 
