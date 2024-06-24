@@ -82,20 +82,6 @@ I had a few lines too long in the settings.py as shown below:
 
 Site was tested using Chrome Dev Tools with the responsiveness section. Ensuring the webpage can be clearly used on all screensizes/devices.
 
-### 403 and 404 pages
-
-A 403 page were created and tested so that if a user tries to access a URL to delete a post when they do not own it, the 403 page is displayed notifying the user that they are not authorized to perform the action. 
-
-![403 page](readmedocs/screenshots/403-page.png)
-
-
-
-
-A 404 page was created so that if a user enters an incorrect URL they will be given a 404 page notifying them of this and allow the user to navigate to the home page easily.
-
-![404 page](readmedocs/screenshots/404-page.png)
-
-
 
 ### Lighthouse Tests
 

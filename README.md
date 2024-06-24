@@ -170,36 +170,252 @@ The home page is the landing page for the website. It clearly shows the purpose 
 
 ### All Builds
 
+The 'All Builds' page is the location where all users posts are displayed. They are ordered in most recently created. 
 
+The builds are limited to 3 posts per page so avoid the need of scrolling. 
+
+Each build has a brief overview on the screen to clearly show the user what the post is. If the user wishes to read more, they can click on the 'Read More' button which takes them through to the detailed view. 
+
+![All Builds page](readmedocs/screenshots/all-builds-laptop.png)
+
+![All builds tablet](readmedocs/screenshots/all-builds-tablet.png)
 
 ### Search Bar
 
+The search bar is visible on the all builds page. This queries the database and looks for model numbers only. 
+
+![Search bar](readmedocs/screenshots/search-bar.png)
+
+Users can enter the set number of a build to see if it exists. 
+
+Information will be shown to the user of the search they performed and show the results if applicable. If nothing matches their search criteria of a model number, no results will show and has a quick link to add a build as the first person to post.
+
+![Search bar results](readmedocs/screenshots/search%20results.png)
+
+![Search bar no results](readmedocs/screenshots/no-results.png)
+
 ### Detailed View 
+
+The detailed view is displayed when a user choose to click the 'Read More' button on an individual post. This opens up a new view with all of the information about the users build post.
+
+![Detailed post view](readmedocs/screenshots/detailed-view.png)
 
 ### Add Build
 
+The add build page is a front end user interactable form which allows signed in users to add their posts to share with the BrickBros community. 
+
+![Add Post](readmedocs/screenshots/add-post.png)
+
+If a user is not singed in, the 'Add Build' page will ask them to login.
+
+![Add Post Logged out](readmedocs/screenshots/add-post-logged-out.png)
+
+If a user does not fill in required criteria, the post form will notify the user of any missing criteria.
+
+![Missing info](readmedocs/screenshots/incomplete-post.png)
+
+Once a user is logged in and filled in all required criteria, they will be notifed that the post was successful. 
+
+![Success Post](readmedocs/screenshots/successful-post.png)
+
+
+### Edit Build
+
+If a user is logged into their own profile, they can click on one of their own posts. Either from the 'My Builds' page or locating it from the 'All Builds' screen.
+
+In addition to the detailed view, the owner of the post will be able to Edit the post. (These options do not occur when viewing a post from a different user account).
+
+![Edit Post button](readmedocs/screenshots/edit-button.png)
+
+When the user clicks on edit. The add post form appears with the title 'Edit Post' - All previous fields are populated and will allow text to be removed/added to/updated. 
+
+![Edit Post](readmedocs/screenshots/edit-form.png)
+
+Once the edit is completed and submitted, the user will be notified that their edited post was successful.
+
+![Edit Success](readmedocs/screenshots/edit-confirmed.png)
+
+If an unauthenticated used obtains the URL path to edit a post they do not own, the 403 page will be displayed.
+
+
+### Delete Build
+
+The delete build option works in the exact same way as the edit build feature. 
+
+However, the user will be asked to confirm whether or not they want to proceed with the post deletion when they do click delete. 
+
+![Confirm Delete](readmedocs/screenshots/confirm-delete.png)
+
 ### My Builds
+
+My builds is a navbar option for users that are logged in to their profile. 
+
+This page is a copy of the all builds page but only displays the builds for the logged in user.
+
+![My Builds](readmedocs/screenshots/my-builds.png)
+
+If the user has not posted anything yet, this information will be shown to the user with a quick link to add their first post.
+
+![No builds](readmedocs/screenshots/no-builds.png)
+
 
 ### Messages
 
+A variety of 'toast' messages are displayed throughout the site to notify a user that the action they performed was successful. 
+
+These messages include:
+
+    - Successful Login
+    - Successful Logout
+    - Added a Post
+    - Edited a Post
+    - Deleted a Post
+
+The messages were styled inline with the website colour scheme, overriding bootstraps default styles.
+
+![Toast Message](readmedocs/screenshots/message.png)
+
+
 ### Login / Logout / Register
+
+The user account pages were styled with css to fit in with the colour scheme used throughout the site. Some minor text changes were implemented, however the bulk of these pages was taken from Django's AllAuth package. 
+
+- Login Page
+
+![Login](readmedocs/screenshots/sign-in.png)
+
+
+- Logout Page
+
+![Logout](readmedocs/screenshots/sign-out.png)
+
+
+- Register Page
+
+![Register](readmedocs/screenshots/register.png)
+
+
 
 ### Accessibility 
 
-### Responsive Design (Mobile and Tablet views)
+Using the following elements, I tried to ensure the website was made as accessible as possible by:
+
+- Using semantic HTML.
+- Using aria-labels for screen readers.
+- Using alt attributes on images where available.
+- A responsive design, allowing users to view and visit the site on a variety of devices.
+- Using a simple colour scheme, allowing for appropriate contrasts between the text and background.
+- Font sizes and styling are easily readable.
+- Front end forms provide user feedback when required.
+- Toast messages display notifying the user of performed actions.
+
+
+### 403 and 404 pages
+
+A 403 page was created and tested so that if a user tries to access a URL to delete a post when they do not own it, the 403 page is displayed notifying the user that they are not authorized to perform the action. 
+
+![403 page](readmedocs/screenshots/403-page.png)
+
+
+
+
+A 404 page was created so that if a user enters an incorrect URL they will be given a 404 page notifying them of this and allow the user to navigate to the home page easily.
+
+![404 page](readmedocs/screenshots/404-page.png)
+
 
 
 ## Deployment
 
 ### Environment and Settings
 
+Set Up env.py:
+
+- Open your IDE and create a file named env.py in the main directory if it doesn't already exist.
+- Add the DATABASE_URL and SECRET_KEY values to the env.py file.
+
+Configure settings.py:
+
+- Open settings.py and import the env.py file.
+- Add the paths for DATABASE_URL and SECRET_KEY.
+
+Install Django:
+
+- Install Django and update requirements.txt.
+
+Create Your Project:
+
+- Initialize your Django project.
+
+Static Files Settings:
+
+- Add settings for static files in settings.py.
+
+Procfile:
+
+- Create a file named Procfile (with a capital P) in the main directory.
+
+Cloudinary Setup:
+
+- For cloud-based image storage, add the CLOUDINARY_URL to env.py.
+- Add Cloudinary libraries to INSTALLED_APPS in settings.py.
+
+Allowed Hosts:
+
+- Add your IDE workspace and Heroku to ALLOWED_HOSTS in settings.py.
+
+Database Migrations:
+
+- Run makemigrations and migrate to set up your database. Using python3 manage.py makemigrations and python3 manage.py migrate in the terminal.
+
+Prepare for Deployment:
+
+- Ensure DEBUG is set to False in settings.py before committing and pushing to GitHub.
+
 ### Deployment to Heroku
+
+Create a Heroku App:
+
+- Log in or create an account on Heroku.
+- Click 'New' and then 'Create New App'.
+- Enter a unique name and select a region, then click 'Create App'.
+
+Connect to GitHub:
+
+- In the Heroku dashboard, go to the 'Deploy' tab.
+- Choose 'GitHub' as the deployment method, find your repository, and click 'Connect'.
+
+Set Config Vars:
+
+- Go to the 'Settings' tab and click 'Reveal Config Vars'.
+- Add the environment variables from env.py (CLOUDINARY_URL, DATABASE_URL, and SECRET_KEY).
+- Add DISABLE_COLLECTSTATIC and set it to 1 to disable, or 0 if the app is ready for static file collection.
+
+Deploy:
+
+- In the 'Deploy' tab, select the branch you want to deploy (usually main) and click 'Deploy Branch'.
+- Once deployed, click 'View' to see your live site.
 
 ### Local Deployment
 
 #### Forking
 
+Fork a Repository:
+
+- Log in to GitHub (or create an account).
+- Navigate to the repository you want to fork.
+- Click the 'Fork' button in the top right corner.
+
+
 #### Cloning
+
+Clone a Repository:
+
+- Log in to GitHub (or create an account).
+- Navigate to the repository you want to clone.
+- Click the 'Code' button and choose to clone using HTTPS, SSH, or GitHub CLI. Copy the link provided.
+- Open your terminal and navigate to the directory where you want to clone the repository.
+- Run git clone <copied-link> and press enter.
 
 
 
