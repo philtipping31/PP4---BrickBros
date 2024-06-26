@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="container text-center">
+            <h1>500 - Internal Sever Error</h1>
+            <p>Nothing to worry about, this issue is on us!</p>
+            <p>Click below to go back to our Home Page</p>
+            <a href="{% url 'home' %}" class="btn btn btn-signup btn-outline-dark">Home Page</a>
+        </div>
+    </div>
+</div>
+
+    {% endblock %}

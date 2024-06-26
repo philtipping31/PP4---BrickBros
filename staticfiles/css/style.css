@@ -109,7 +109,7 @@ img.logo {
     bottom: 0;
     padding: 20px;
     display: block;
-    background-color: rgba(109, 108, 107, 0.8);
+    background-color: rgba(40, 40, 39, 0.8);
 }
 
 /* Search Bar & facilities */ 
@@ -202,6 +202,30 @@ img.logo {
 
 .main-view-text {
     width: 95%;
+}
+
+/* Reviews */ 
+
+.review{
+    text-decoration: underline;
+
+}
+
+.rating {
+    font-size: 120%;
+    font-weight: 700;
+}
+
+.faded {
+    color: rgb(154, 155, 155);
+}
+
+.approval-text {
+    color: #000;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 /* Alerts */ 
@@ -301,13 +325,13 @@ footer {
     /* Hero Styles */
     #hero-text {
         width: 550px;
-        height: 130px;
+        height: 150px;
         right: 40px;
     }
 
     #hero-text h2 {
         text-align: right;
-        font-size: 130%;
+        font-size: 180%;
         padding: 25px;
     }
 
