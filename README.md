@@ -17,7 +17,7 @@ Using a combination of HTML, CSS, JavaScript and Python (Using the Django FrameW
 
 The site is responsive and can be used and view on all screen sizes!
 
-![Responsive Mockup of BrickBros](readmedocs/images/responsive-design.png)
+![Responsive Mockup of BrickBros](readmedocs/screenshots/responsive-design.png)
 
 
 
@@ -36,7 +36,7 @@ Brick Bros is a lego build sharing site. Allowing users full CRUD functionality 
 - As a first time user I want to easily create an account and be notified that I am logged in.
 - As a first time user I want to be able to create a post once I am logged in.
 - As a first time user I want to be able to edit and delete my own posts once I am logged in.
-- As a first time user I want to be notifed of any changes I make:
+- As a first time user I want to be notified of any changes I make:
     - Post has been created
     - Post has been updated/edited
     - Post has been deleted
@@ -57,7 +57,7 @@ Before I began coding my project, I set up an Issues template in GitHub and link
 
 User stories were added to sprints to allow me to focus on sections of work at a particular time. 
 
-As things occured, other items would be introduced and re-prioritised, enforcing the agile methodology of working. 
+As things occured, other items would be introduced and re-prioritisied, enforcing the agile methodology of working. 
 
 ![Git hub agile issues board](readmedocs/screenshots/github-board.png)
 
@@ -90,9 +90,11 @@ I used a mono colour scheme with a yellow addition to reference the lego theme.
 
 ### Data Model
 
-My data model was drawn up before creating the actual model to serve a template/blueprint before adding it into my models.py file.
+My data models were drawn up before creating the actual model to serve a template/blueprint before adding it into my models.py file.
 
-![Model](readmedocs/screenshots/model.png)
+I used [DBeaver](https://dbeaver.io/download/) to give an accurate representation of my ERD's.
+
+![Model](readmedocs/screenshots/erd.png)
 
 
 
@@ -116,11 +118,13 @@ My data model was drawn up before creating the actual model to serve a template/
 - Django Messages are used throughout the website to notify the user of any action they peform. This was introduced for a better user experience and understanding of the site. 
 
 - Messages included:
-    - Logged in to the site
-    - Logged out of the site
-    - Added a build post
-    - Edited a build post
-    - Deleted a build post
+
+Logged in to the site
+Logged out of the site
+Added a build post
+Edited a build post
+Deleted a build post
+Added a review
 
 
 ## Features
@@ -129,7 +133,7 @@ My data model was drawn up before creating the actual model to serve a template/
 
 The webpage is responsive to different screen sizes allowing the user to access the webpage on their desired device. Mobile first design was followed throughout. With the use of CSS Media Queries to alter the visual aspect of the page when the screen size is changed.
 
-![Responsive Design](readmedocs/screenshots/responsive-two.png)
+![Responsive Design](readmedocs/screenshots/responsive-design.png)
 
 ### NavBar
 
@@ -310,7 +314,7 @@ Using the following elements, I tried to ensure the website was made as accessib
 - Toast messages display notifying the user of performed actions.
 
 
-### 403 and 404 pages
+### 403, 404 and 500 pages
 
 A 403 page was created and tested so that if a user tries to access a URL to delete a post when they do not own it, the 403 page is displayed notifying the user that they are not authorized to perform the action. 
 
@@ -324,12 +328,17 @@ A 404 page was created so that if a user enters an incorrect URL they will be gi
 ![404 page](readmedocs/screenshots/404-page.png)
 
 
+
+A 500 page was created for internal server errors. Showing the user that the issue is with the webpage and not them.
+
+![500 Page](readmedocs/screenshots/500-page.png)
+
+
 ## Features not yet implemented
 
-- Ability to rate builds out of 5 stars
 - User profile, this would consist of the my builds in condensed view, liked builds, edit/update and delete user profile.
 - Auto populate the slug field on Add Post to improve user experience. I could only work this out from an Admin point and not a front end user. 
-- Post Comments - I did not add this due to it already being added to the CodeStar blog so would have been a direct copy.
+- Front end edit and delete reviews. This can be controlled by the admin site only.
 - Draft Posts - This would allow a user to draft a post and save it for later, linking to the user profile section.
 - Lego Categories - Have an option on the add build to categorise the build. This would of then filtered into a navbar menu for Categories. Allowing a user to just view posts relating to a particular lego category.
 
