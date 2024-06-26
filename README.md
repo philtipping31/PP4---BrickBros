@@ -57,7 +57,7 @@ Before I began coding my project, I set up an Issues template in GitHub and link
 
 User stories were added to sprints to allow me to focus on sections of work at a particular time. 
 
-As things occured, other items would be introduced and re-prioritisied, enforcing the agile methodology of working. 
+As things occured, other items would be introduced and re-prioritised, enforcing the agile methodology of working. 
 
 ![Git hub agile issues board](readmedocs/screenshots/github-board.png)
 
@@ -139,7 +139,7 @@ The webpage is responsive to different screen sizes allowing the user to access 
 
 The nav bar is visible on every page due to being in the base.html file. The BrickBros logo is present as well showing if the user is logged in or logged out of the site.
 
-The navbars state changes based on whether or not a user is logged in or logged out of the webpage. 
+The nav-bars state changes based on whether or not a user is logged in or logged out of the webpage. 
 
 - Logged Out
 
@@ -206,19 +206,17 @@ The detailed view is displayed when a user choose to click the 'Read More' butto
 
 ### Add Build
 
-The add build page is a front end user interactable form which allows signed in users to add their posts to share with the BrickBros community. 
+The add build page is a front end user form which allows signed in users to add their posts to share with the BrickBros community. 
 
 ![Add Post](readmedocs/screenshots/add-post.png)
 
-If a user is not singed in, the 'Add Build' page will ask them to login.
-
-![Add Post Logged out](readmedocs/screenshots/add-post-logged-out.png)
+If a user is not signed in, the 'Add Build' page will ask them to login to post.
 
 If a user does not fill in required criteria, the post form will notify the user of any missing criteria.
 
 ![Missing info](readmedocs/screenshots/incomplete-post.png)
 
-Once a user is logged in and filled in all required criteria, they will be notifed that the post was successful. 
+Once a user is logged in and filled in all required criteria, they will be notified that the post was successful. 
 
 ![Success Post](readmedocs/screenshots/successful-post.png)
 
@@ -261,6 +259,10 @@ This page is a copy of the all builds page but only displays the builds for the 
 If the user has not posted anything yet, this information will be shown to the user with a quick link to add their first post.
 
 ![No builds](readmedocs/screenshots/no-builds.png)
+
+### Reviews
+
+
 
 
 ### Messages
@@ -417,6 +419,18 @@ Deploy:
 
 ### Local Deployment
 
+#### Version Control
+
+BrickBros was created using the cloud IDE GitPod code editor and pushed to github.
+
+The following git commands were used throughout development to push code to the remote repo:
+
+1. git add . - This command was used to add the file(s) to the staging area before they are committed.
+
+2. git commit -m “commit message” - This command was used to commit changes to the local repository queue, ready for the final step.
+
+3. git push - This command was used to push all committed code to the repository on github.
+
 #### Forking
 
 Fork a Repository:
@@ -450,43 +464,44 @@ Clone a Repository:
 
 ### Modules
 
-- cloudinary==1.36.0
-- crispy-bootstrap5==0.7
-- dj-database-url==0.5.0
-- dj3-cloudinary-storage==0.0.6
-- Django==5.0.6
-- django-allauth==0.63.3
-- django-crispy-forms==2.1
-- django-resized==1.0.2
-- django-summernote==0.8.20.0
-- gunicorn==20.1.0
-- pillow==10.3.0
-- psycopg2==2.9.9
-- sqlparse==0.5.0
-- whitenoise==5.3.0
+- cloudinary==1.36.0 - A python SDK to integrate with the cloud based image hosting site Cloudinary
+- crispy-bootstrap5==0.7 - Django application for creating forms with Bootstrap 5
+- dj-database-url==0.5. - To configure Django's database settings using a single database URL
+- dj3-cloudinary-storage==0.0.6 - A Django storage backend for integrating with Cloudinary
+- Django==5.0.6 - The main Django web framework
+- django-allauth==0.63.3 - A Django application for handling user authentication, registration, account management, and social authentication
+- django-crispy-forms==2.1 - A Django application that provides a way to style Django forms
+- django-resized==1.0.2 - A Django application for resizing images before saving them
+- django-summernote==0.8.20.0 - A Django application that integrates the Summernote WYSIWYG editor into Django admin and forms, allowing for rich text editing with a user-friendly interface.
+- gunicorn==20.1.0 - A python server
+- pillow==10.3. - A Python Imaging Library
+- psycopg2==2.9.9 - A PostgreSQL database adapter for Python
+- sqlparse==0.5.0 - SQL parser for python
+- whitenoise==5.3.0 - A Django middleware for serving static files directly from the application, without relying on an external server
 
 ### Django Imports 
 
-- LoginRequiredMixin
-- UserPassesTestMixin
-- SuccessMessageMixin
-- Q
-- CreateView
-- ListView
-- DeleteView
-- UpdateView
-- render
-- generic
-- messages
-- get_object_or_404
-- SummernoteModelAdmin
-- admin
+- LoginRequiredMixin - A mixin provided by Django that restricts access to views to authenticated users only. 
+- UserPassesTestMixin - A mixin used to allow access to a view only if the user passes a certain test.
+- SuccessMessageMixin - A mixin that adds a success message to be displayed after a form is successfully submitted.
+- Q - A class provided by Django that allows for particular query lookups
+- CreateView - A generic view in Django used to handle the creation of new objects.
+- ListView - A generic view in Django used to display a list of objects.
+- DeleteView - A generic view in Django used to handle the deletion of objects.
+- UpdateView - A generic view in Django used to handle the updating of existing objects.
+- render - A shortcut function provided by Django that renders a template with a given context and returns an HttpResponse object.
+- generic - A module in Django that contains generic class-based views
+- messages - A framework in Django for storing and displaying temporary messages to users.
+- get_object_or_404 - A shortcut function in Django that retrieves an object from the database based on the provided query parameters. If the object does not exist, it raises a Http404 exception, resulting in a 404 Not Found error page.
+- SummernoteModelAdmin - A class provided by the django-summernote package that integrates the Summernote editor with the Django admin interface.
+- admin - The Django admin site
+- MaxValueValidator and MinValueValidator - Validators provided by Django to enforce maximum and minimum value constraints on fields. 
 
 
 ### External Programmes Used
 
 - [Am I responsive](https://amiresponsive.blogspot.com/?url=https%3A%2F%2F8000-philtipping-pp4brickbro-k1qg35holpj.ws.codeinstitute-ide.net%2F) - For responsive design mockups for the readme documentation.
-- [Balsamiq](https://balsamiq.com/) - For creating wireframes of the website.
+- [Balsamiq](https://balsamiq.com/) - For creating wire frames of the website.
 - [Canva](https://www.canva.com/) - Used to create the BrickBros logo.
 - Chrome Dev Tools - Used for testing the project through the entire duration of creation.
 - [CI PEP8 Linter](https://pep8ci.herokuapp.com/) - Used to test all python files.
@@ -496,11 +511,11 @@ Clone a Repository:
 - [FontAwesome](https://fontawesome.com/) - For the use of icons throughout the website.
 - [Free Convert](https://www.freeconvert.com/image-converter) - Used to convert any images to .webp format.
 - Github - Used to store and display all files used in the project.
-- GitPod - Cloud Platform IDE used to code and deploy project envirnonment to Github.
+- GitPod - Cloud Platform IDE used to code and deploy project environment to Github.
 - Google Fonts - Used to import into CSS file for use throughout the webpage.
 - [Heroku](https://id.heroku.com/login) - Used to host the website
 - [Lego Site](https://www.lego.com/en-gb) - Used for images, model numbers and descriptions for all lego posts. 
-- Lighthouse - To run tests of peformance on the webpages.
+- Lighthouse - To run tests of performance on the webpages.
 - [Pexels](https://www.pexels.com/photo/close-up-shot-of-bricks-12081662/) - This image was used for the hero banner image on all pages.
 - [Table to MD](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/) - Used to convert my manual test spreadsheets to .md format for the Testing.md file.
 - [W3C CSS Validator](https://validator.w3.org/) - Used to test all HTML Files

@@ -138,7 +138,7 @@
             {{ review_form | crispy }}
             {% csrf_token %}
             <button type="submit"
-              class="btn btn btn-signup btn-outline-dark mb-3">Add Review</button>
+            class="post-link lego-builds btn btn-outline-dark read-more">Add Review</button>
           </form>
           {% else %}
           <p>Please <a class="underline" href="{% url 'account_login' %}">Log in</a> to leave a review</p>
