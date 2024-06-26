@@ -343,11 +343,11 @@ A variety of 'toast' messages are displayed throughout the site to notify a user
 
 These messages include:
 
-    - Successful Login
-    - Successful Logout
-    - Added a Post
-    - Edited a Post
-    - Deleted a Post
+- Successful Login
+- Successful Logout
+- Added a Post
+- Edited a Post
+- Deleted a Post
 
 The messages were styled inline with the website colour scheme, overriding bootstraps default styles.
 
