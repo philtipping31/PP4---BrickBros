@@ -26,4 +26,14 @@ class BuildForm(forms.ModelForm):
         }
 
 
-
+class ReviewForm(forms.ModelForm):
+    """
+    A form for adding a review to a build post.
+    """
+    class Meta:
+        model = Review
+        fields = ['content', 'rating']
+        labels = {
+            'content': "Add your review here",
+            'rating': "Rating out of 5 stars"
+        }

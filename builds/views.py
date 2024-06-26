@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import (
     LoginRequiredMixin, UserPassesTestMixin
 )
 from .models import Build
-from .forms import BuildForm
+from .forms import BuildForm, ReviewForm
 
 # Create your views here.
 
@@ -33,6 +33,7 @@ def build_view(request, slug):
     build = get_object_or_404(queryset, slug=slug)
     reviews = build.reviews.all().order_by("-review_date")
     review_amount = build.reviews.filter(approved=True).count()
+    review_form = ReviewForm()
 
 
     return render(
@@ -42,6 +43,7 @@ def build_view(request, slug):
             "build": build,
             "reviews": reviews,
             "review_amount": review_amount,
+            "review_form": review_form
         },
     )
 

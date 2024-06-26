@@ -103,13 +103,13 @@ img.logo {
     margin-left: 2px;
 }
 
-#hero-text h1 {
+#hero-text h2 {
     text-align: left;
     position: absolute;
     bottom: 0;
     padding: 20px;
     display: block;
-    background-color: rgba(109, 108, 107, 0.8);
+    background-color: rgba(40, 40, 39, 0.8);
 }
 
 /* Search Bar & facilities */ 
@@ -214,6 +214,14 @@ img.logo {
 .rating {
     font-size: 120%;
     font-weight: 700;
+}
+
+.faded {
+    color: rgb(154, 155, 155);
+}
+
+.approval-text {
+    color: #000;
 }
 
 /* Alerts */ 
