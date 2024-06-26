@@ -585,6 +585,7 @@ Clone a Repository:
 - [CI PEP8 Linter](https://pep8ci.herokuapp.com/) - Used to test all python files.
 - [Cloudinary](https://cloudinary.com/) - Used for storing images in a cloud based application.
 - [Coolors](https://coolors.co/000000-7b7b7a-ffffff-fee607) - For creating a visual representation of the webpage colour scheme.
+- [DBeaver](https://dbeaver.io/download/) - To view the database structure and take a correct ERD for README documentation.
 - [Favicon.io](https://favicon.io/favicon-converter/) - Used to create a Favicon conversion of the logo created in Canva.
 - [FontAwesome](https://fontawesome.com/) - For the use of icons throughout the website.
 - [Free Convert](https://www.freeconvert.com/image-converter) - Used to convert any images to .webp format.
