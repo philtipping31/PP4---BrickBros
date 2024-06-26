@@ -100,10 +100,10 @@
       <h3 class="review mt-3 p-2">Reviews:</h3>
       <div>
         {% for review in reviews %}
-        <hr>
         <div class="p-2
           {% if not review.approved and review.user == user %}
           faded{% elif not review.approved %} d-none{% endif %}">
+          
           <p class="rating">
             {{ review.user }} Wrote:
           </p>
@@ -121,6 +121,7 @@
             {{ review.user }} Your review is awaiting approval
           </p>
           {% endif %}
+          <hr>
         </div>
         <!-- Our for loop ends here -->
         {% endfor %}
@@ -140,7 +141,7 @@
               class="btn btn btn-signup btn-outline-dark mb-3">Add Review</button>
           </form>
           {% else %}
-          <p>Log in to leave a review</p>
+          <p>Please <a class="underline" href="{% url 'account_login' %}">Log in</a> to leave a review</p>
           {% endif %}
         </div>
       </div>

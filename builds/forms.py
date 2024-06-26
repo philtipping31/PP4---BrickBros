@@ -32,7 +32,7 @@ class ReviewForm(forms.ModelForm):
     """
     class Meta:
         model = Review
-        fields = ['content', 'rating']
+        fields = ['title','content', 'rating']
         labels = {
             'content': "Add your review here",
             'rating': "Rating out of 5 stars"
