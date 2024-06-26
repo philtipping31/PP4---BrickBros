@@ -45,7 +45,6 @@ class Build(models.Model):
         return f"{self.build_title} | Posted by {self.user}"
 
 
-
 class Review(models.Model):
     """
     A model to create the review option for build posts.
@@ -71,4 +70,3 @@ class Review(models.Model):
 
     def __str__(self):
         return f"{self.title} | Review added by {self.user}"
-    
