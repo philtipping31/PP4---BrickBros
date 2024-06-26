@@ -9,7 +9,7 @@ from django.db.models import Q
 from django.contrib.auth.mixins import (
     LoginRequiredMixin, UserPassesTestMixin
 )
-from .models import Build
+from .models import Build, Review
 from .forms import BuildForm, ReviewForm
 
 # Create your views here.

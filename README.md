@@ -23,6 +23,51 @@ The site is responsive and can be used and view on all screen sizes!
 
 ## Contents
 
+1. [User Experience (UX)](#user-experience-ux)
+    - [First Time User Goals](#first-time-user-goals)
+    - [Returning User Goals](#returning-user-goals)
+    - [Agile Working](#agile-working)
+2. [Website Design](#website-design)
+    - [Wire Frames](#wire-frames)
+    - [Colour Scheme](#colour-scheme)
+    - [Data Model](#data-model)
+3. [WebPage Security](#webpage-security)
+    - [env.py](#envpy)
+    - [Defensive Programming](#defensive-programming)
+    - [Input Validation](#input-validation)
+    - [Toast Messages](#toast-messages)
+4. [Tests](#tests)
+5. [Features](#features)
+    - [General](#general)
+    - [NavBar](#navbar)
+    - [Home Page](#home-page)
+    - [All Builds](#all-builds)
+    - [Search Bar](#search-bar)
+    - [Detailed View](#detailed-view)
+    - [Add Build](#add-build)
+    - [Edit Build](#edit-build)
+    - [Delete Build](#delete-build)
+    - [My Builds](#my-builds)
+    - [Reviews](#reviews)
+    - [Messages](#messages)
+    - [Login / Logout / Register](#login--logout--register)
+    - [Accessibility](#accessibility)
+    - [403, 404 and 500 pages](#403-404-and-500-pages)
+6. [Bugs Fixed](#bugs-fixed)
+7. [Features Not Yet Implemented](#features-not-yet-implemented)
+8. [Deployment](#deployment)
+    - [Environment and Settings](#environment-and-settings)
+    - [Deployment to Heroku](#deployment-to-heroku)
+    - [Local Deployment](#local-deployment)
+9. [Technologies, Programmes, Documentation and Media Used](#technologies-programmes-documentation-and-media-used)
+    - [Main Technologies](#main-technologies)
+    - [Modules](#modules)
+    - [Django Imports](#django-imports)
+    - [External Programmes Used](#external-programmes-used)
+    - [Documentation Used](#documentation-used)
+10. [Credits and Acknowledgements](#credits-and-acknowledgements)
+
+
 
 ## User Experience (UX)
 
@@ -126,6 +171,9 @@ Edited a build post
 Deleted a build post
 Added a review
 
+## Tests
+
+All testing has been documented in the [TESTING.md](https://github.com/philtipping31/PP4---BrickBros/blob/main/TESTING.md) file
 
 ## Features
 
@@ -262,7 +310,31 @@ If the user has not posted anything yet, this information will be shown to the u
 
 ### Reviews
 
+The ability to add a review on a build post is available for logged in users only. 
 
+Reviews are displayed under the detailed view of the build post. It consists of the user that wrote the review, their comment and rating.
+
+![Reviews](readmedocs/screenshots/reviews.png)
+
+If a user is not logged in, the reviews section asks them to log in.
+
+![Logged Out Add Review](readmedocs/screenshots/review-loggedout.png)
+
+When a user is logged in they will be able to post a review onto any build post, however, will await approval before showing to all users.
+
+![Add Review](readmedocs/screenshots/add-review.png)
+
+A message will display when the review is submitted.
+
+![Review Message](readmedocs/screenshots/review-message.png)
+
+A logged in user can see their pending review. However, other users will not be able to see other user un-approved reviews.
+
+![Pending Review](readmedocs/screenshots/pending-review.png)
+
+Once a review is approved by admin, the reviews will be on display for all users.
+
+![Review posted](readmedocs/screenshots/review-showing.png)
 
 
 ### Messages
@@ -324,7 +396,6 @@ A 403 page was created and tested so that if a user tries to access a URL to del
 
 
 
-
 A 404 page was created so that if a user enters an incorrect URL they will be given a 404 page notifying them of this and allow the user to navigate to the home page easily.
 
 ![404 page](readmedocs/screenshots/404-page.png)
@@ -336,12 +407,19 @@ A 500 page was created for internal server errors. Showing the user that the iss
 ![500 Page](readmedocs/screenshots/500-page.png)
 
 
+## Bugs fixed
+
+- Django messages were duplicating on pages and then not showing. I realised I had the code in multiple places. I removed the duplicated code and ensure the message code for Django was only in the base.html
+- Rating number - A user could add a rating higher than 5. I implemented the Min and Max validators and the fixed choices in form of a dropdown menu instead to control the numbers accepted.
+
+
 ## Features not yet implemented
 
 - User profile, this would consist of the my builds in condensed view, liked builds, edit/update and delete user profile.
+- Front end Edit and Delete of reviews.
+- My reviews page to show posts and reviews in one view.
 - Auto populate the slug field on Add Post to improve user experience. I could only work this out from an Admin point and not a front end user. 
-- Front end edit and delete reviews. This can be controlled by the admin site only.
-- Draft Posts - This would allow a user to draft a post and save it for later, linking to the user profile section.
+- Draft Posts and reviews - This would allow a user to draft a post and save it for later, linking to the user profile section.
 - Lego Categories - Have an option on the add build to categorise the build. This would of then filtered into a navbar menu for Categories. Allowing a user to just view posts relating to a particular lego category.
 
 
