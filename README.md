@@ -530,6 +530,7 @@ Clone a Repository:
     - [Generic editing views](https://docs.djangoproject.com/en/5.0/ref/class-based-views/generic-editing/)
     - [Authentication](https://docs.djangoproject.com/en/5.0/topics/auth/default/)
     - [Making Queries](https://docs.djangoproject.com/en/5.0/topics/db/queries/)
+    - [Validators](https://docs.djangoproject.com/en/5.0/ref/validators/)
 
 - Codu
     - [Unauthorized Access](https://www.codu.co/articles/securing-django-views-from-unauthorized-access-npyb3to_)
@@ -543,4 +544,6 @@ Clone a Repository:
 Thank you to [Lego Site](https://www.lego.com/en-gb) for the use of images, model numbers and descriptions for all lego posts. I do not own any of the content displayed on this webpage.
 
 The Code Institute walkthrough project to give me a base understanding on create a full CRUD project.
+
+Tutor support and my mentor for invaluable support throughout the creation of this project.
 
