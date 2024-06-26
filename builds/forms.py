@@ -1,5 +1,5 @@
 from django import forms
-from .models import Build
+from .models import Build, Review
 
 
 class BuildForm(forms.ModelForm):
@@ -24,3 +24,6 @@ class BuildForm(forms.ModelForm):
             "excerpt": "Short Description",
             "content": "Write something about the build"
         }
+
+
+

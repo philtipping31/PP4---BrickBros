@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+from django.core.validators import MaxValueValidator, MinValueValidator
+
 # Create your models here.
 
 # Choice Fields
@@ -41,3 +43,31 @@ class Build(models.Model):
 
     def __str__(self):
         return f"{self.build_title} | Posted by {self.user}"
+
+
+
+class Review(models.Model):
+    """
+    A model to create the review option for build posts.
+    """
+    user = models.ForeignKey(
+        User, related_name='review_owner', on_delete=models.CASCADE)
+    title = models.CharField(max_length=250, null=False, blank=False)
+    build = models.ForeignKey(
+        Build, related_name='build_post', on_delete=models.CASCADE
+    )
+    rating = models.IntegerField(
+        default=1, validators=[
+            MaxValueValidator(5),
+            MinValueValidator(1)
+        ]
+    )
+    content = models.TextField()
+    review_date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-review_date"]
+
+    def __str__(self):
+        return f"{self.title} | Review added by {self.user}"
+    

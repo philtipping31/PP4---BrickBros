@@ -76,7 +76,7 @@ I had a few lines too long in the settings.py as shown below:
 | [#User Story #30](https://github.com/philtipping31/PP4---BrickBros/issues/30) | If a user has the URL for My Builds and is logged out, the login page is loaded                                                  | Logout of the site, and enter the url for mybuilds                                                                                                                                  | Login page is loaded as this a restricted view for not logged in users                                                            | Pass               |
 
 
-## Manual Testing
+## Manual Testing
 
 ### Responsiveness
 
