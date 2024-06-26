@@ -37,3 +37,5 @@ class ReviewForm(forms.ModelForm):
             'content': "Add your review here",
             'rating': "Rating out of 5 stars"
         }
+        RATING_CHOICES = ((1,1),(2,2),(3,3),(4,4),(5,5))
+        widgets = {'rating': forms.Select(choices=RATING_CHOICES)}
