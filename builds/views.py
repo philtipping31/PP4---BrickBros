@@ -33,8 +33,20 @@ def build_view(request, slug):
     build = get_object_or_404(queryset, slug=slug)
     reviews = build.reviews.all().order_by("-review_date")
     review_amount = build.reviews.filter(approved=True).count()
-    review_form = ReviewForm()
 
+    if request.method == "POST":
+        review_form = ReviewForm(data=request.POST)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.user= request.user
+            review.build = build
+            review.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Your review was submitted and awaiting approval'
+    )
+
+    review_form = ReviewForm()
 
     return render(
         request,
