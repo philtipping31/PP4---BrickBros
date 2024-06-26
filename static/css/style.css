@@ -204,6 +204,18 @@ img.logo {
     width: 95%;
 }
 
+/* Reviews */ 
+
+.review{
+    text-decoration: underline;
+
+}
+
+.rating {
+    font-size: 120%;
+    font-weight: 700;
+}
+
 /* Alerts */ 
 
 .alert-bg {

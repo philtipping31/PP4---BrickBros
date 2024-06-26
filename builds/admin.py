@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Build
+from .models import Build, Review
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -20,3 +20,6 @@ class BuildAdmin(admin.ModelAdmin):
     )
     list_filter = ('build_type',)
     prepopulated_fields = {'slug': ('build_title',)}
+
+
+admin.site.register(Review)

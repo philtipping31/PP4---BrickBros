@@ -65,7 +65,7 @@
                     {{ build.difficulty_rating| title }}
                 </p>
                 <p>
-                    <strong>Desription</strong>
+                    <strong>Description</strong>
                 </p>
                 <p>
                     {{ build.content }}
@@ -82,6 +82,49 @@
             </div>
         </div>
     </div>
+      <!-- Displaying review amount -->
+  <div class="row">
+    <div class="col-12">
+      <strong class="text-secondary">
+        <i class="far fa-comments"></i> {{ review_amount }}
+      </strong>
+    </div>
+    <div class="col-12">
+      <hr>
+    </div>
+  </div>
+  <!-- Displaying Reviews -->
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 ">
+      <h3 class="review mt-3 p-2">Reviews:</h3>
+      <div>
+        {% for review in reviews %}
+        <div class="p-2
+          {% if not review.approved and review.user == user %}
+          faded{% elif not review.approved %} d-none{% endif %}">
+          <p class="font-weight-bold">
+            {{ review.user }} Wrote:
+          </p>
+          <div>
+            {{ review.content | linebreaks }}
+            <h4 class="rating">Rating</h4>
+            {{ review.rating }} / 5 <i class="fa-solid fa-star"></i>'s
+          </div>
+          <hr>
+          <span class="font-weight-normal">
+            Added {{ review.review_date }}
+          </span>
+          {% if not review.approved and review.user == user %}
+          <p>
+            Your review is awaiting approval
+          </p>
+          {% endif %}
+        </div>
+        <!-- Our for loop ends here -->
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock content %}

@@ -31,11 +31,18 @@ def build_view(request, slug):
 
     queryset = Build.objects.all()
     build = get_object_or_404(queryset, slug=slug)
+    reviews = build.reviews.all().order_by("-review_date")
+    review_amount = build.reviews.filter(approved=True).count()
+
 
     return render(
         request,
         "builds/build_view.html",
-        {"build": build},
+        {
+            "build": build,
+            "reviews": reviews,
+            "review_amount": review_amount,
+        },
     )
 
 

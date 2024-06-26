@@ -54,7 +54,7 @@ class Review(models.Model):
         User, related_name='review_owner', on_delete=models.CASCADE)
     title = models.CharField(max_length=250, null=False, blank=False)
     build = models.ForeignKey(
-        Build, related_name='build_post', on_delete=models.CASCADE
+        Build, related_name='reviews', on_delete=models.CASCADE
     )
     rating = models.IntegerField(
         default=1, validators=[
@@ -64,6 +64,7 @@ class Review(models.Model):
     )
     content = models.TextField()
     review_date = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ["-review_date"]
