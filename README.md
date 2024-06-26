@@ -78,7 +78,7 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/) - This was to al
 ![View Build Wireframe](readmedocs/designs/view-wireframe.png)
 
 
-Using agile methodology some additional pages were added throughout the project which did not have wireframes, however, are just adapated or copied versions of exisiting wireframes.
+Using agile methodology some additional pages were added throughout the project which did not have wire-frames, however, are just adapted or copied versions of existing wire-frames.
 
 
 ### Colour Scheme
@@ -92,7 +92,7 @@ I used a mono colour scheme with a yellow addition to reference the lego theme.
 
 My data models were drawn up before creating the actual model to serve a template/blueprint before adding it into my models.py file.
 
-I used [DBeaver](https://dbeaver.io/download/) to give an accurate representation of my ERD's.
+I used [DBeaver](https://dbeaver.io/download/) to give an accurate representation of my ERD's (Entity Relationship Diagram).
 
 ![Model](readmedocs/screenshots/erd.png)
 
@@ -115,7 +115,7 @@ I used [DBeaver](https://dbeaver.io/download/) to give an accurate representatio
 
 ### Toast Messages
 
-- Django Messages are used throughout the website to notify the user of any action they peform. This was introduced for a better user experience and understanding of the site. 
+- Django Messages are used throughout the website to notify the user of any action they perform. This was introduced for a better user experience and understanding of the site. 
 
 - Messages included:
 
@@ -151,7 +151,7 @@ The navbars state changes based on whether or not a user is logged in or logged 
 ![Logged In Nav](readmedocs/screenshots/laptop-loggedin-nav.png)
 
 
-The navbar collapses to a 'hamburger' icon for screensizes 320px - 990px for responsive designing.
+The navbar collapses to a 'hamburger' icon for screen sizes 320px - 990px for responsive designing.
 
 - Logged Out
 
