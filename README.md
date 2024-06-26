@@ -87,6 +87,9 @@ Brick Bros is a lego build sharing site. Allowing users full CRUD functionality 
     - Post has been deleted
 - As a first time user I want to be able to search for posts via the Model Number search bar.
 - As a first time user I want to be able to navigate to the social media pages of the site easily.
+- As a first time user I want to see that I can add a review to the lego posts if I am logged in.
+- As a first time user I want to be notified that my review has been added and awaiting approval.
+- As a first time user I want to see other users approved reviews.
 
 
 ### Returning User Goals

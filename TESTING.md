@@ -34,6 +34,10 @@ Issues were resolved and files now pass checks.
 
 ![PEP8 Tests](readmedocs/screenshots/pep8-validation.png)
 
+Pep8 was run after each major change was made to any .py file.
+
+![PEP8 Forms](readmedocs/screenshots/pep8-forms.png)
+
 #### Outstanding.
 I had a few lines too long in the settings.py as shown below:
 
