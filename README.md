@@ -19,7 +19,7 @@ The site is responsive and can be used and view on all screen sizes!
 
 ![Responsive Mockup of BrickBros](readmedocs/screenshots/responsive-design.png)
 
-
+The Live Site can be found [Here](https://brick-bros-46d43032f26f.herokuapp.com/)
 
 ## Contents
 
